@@ -1,0 +1,38 @@
+pipeline:
+  name: parentCDS92772
+  identifier: parentCDS92772
+  projectIdentifier: MeenaSyncStep
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: kl
+        identifier: kl
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: childCDS92772
+          project: MeenaSyncStep
+          inputs:
+            identifier: childCDS92772
+            template:
+              templateInputs:
+                stages:
+                  - stage:
+                      identifier: sfd
+                      template:
+                        templateInputs:
+                          type: Deployment
+                          spec:
+                            environment:
+                              environmentRef: <+input>
+                              environmentInputs: <+input>
+                              serviceOverrideInputs: <+input>
+                              infrastructureDefinitions: <+input>
+                            service:
+                              serviceRef: <+input>
+                              serviceInputs: <+input>
+          outputs:
+            - name: dsfs
+              value: "23"
