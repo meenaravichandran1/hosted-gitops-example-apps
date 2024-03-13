@@ -35,4 +35,4 @@ pipeline:
                               serviceInputs: <+input>
           outputs:
             - name: dsfs
-              value: "23456"
+              value: 23456werwqer
