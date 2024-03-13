@@ -1,0 +1,25 @@
+pipeline:
+  name: childCDS92772
+  identifier: childCDS92772
+  tags: {}
+  template:
+    templateRef: pipelineCDS92772
+    versionLabel: v1
+    templateInputs:
+      stages:
+        - stage:
+            identifier: sfd
+            template:
+              templateInputs:
+                type: Deployment
+                spec:
+                  environment:
+                    environmentRef: <+input>
+                    environmentInputs: <+input>
+                    serviceOverrideInputs: <+input>
+                    infrastructureDefinitions: <+input>
+                  service:
+                    serviceRef: <+input>
+                    serviceInputs: <+input>
+  projectIdentifier: MeenaSyncStep
+  orgIdentifier: default
