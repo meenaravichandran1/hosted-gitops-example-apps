@@ -1,0 +1,26 @@
+pipeline:
+  name: breakingchangechildqa
+  identifier: breakingchangechildqa
+  tags: {}
+  template:
+    templateRef: breakingchangepipelineqa
+    versionLabel: v1
+    gitBranch: master
+    templateInputs:
+      stages:
+        - stage:
+            identifier: tes
+            template:
+              templateInputs:
+                type: Deployment
+                spec:
+                  environment:
+                    environmentRef: <+input>
+                    environmentInputs: <+input>
+                    serviceOverrideInputs: <+input>
+                    infrastructureDefinitions: <+input>
+                  service:
+                    serviceRef: <+input>
+                    serviceInputs: <+input>
+  projectIdentifier: MeenaSyncStep
+  orgIdentifier: default
